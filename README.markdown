@@ -1,6 +1,6 @@
-**Author:** Stephen Korecky \
-**Website:** http://stephenkorecky.com \
-**Plugin Website:** http://github.com/skorecky/Add-Clear \
+**Author:** Stephen Korecky <br />
+**Website:** http://stephenkorecky.com <br />
+**Plugin Website:** http://github.com/skorecky/Add-Clear <br />
 
 ## About
 
