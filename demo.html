@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>addClear Demo</title>
+	<title>Add Clear jQuery Plugin Demo</title>
 	<meta name="author" content="Stephen Korecky">
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 	<script type="text/javascript" src="addclear.js"></script>
@@ -13,10 +13,53 @@
 	    $("input").addClear();
 	  });
 	</script>
+	<style type="text/css" media="screen">
+	
+	body {
+	  font:normal 12px/1.5 "Helvetica Neue", Helvetica, sans-serif;
+	}
+	
+	 #wrapper {
+	   margin:100px auto 0;
+	   width:300px;
+	 }
+	 
+	 #wrapper h1 {
+	   font-size:18px;
+	 }
+	 
+	 #wrapper #search {
+	   background:#EEE;
+ 	   -moz-border-radius: 5px;
+ 	   -webkit-border-radius: 5px;
+ 	   font-weight:bold;
+ 	   padding:10px;
+ 	 }
+ 	 
+	 #wrapper #search label {
+	   font-weight:bold;
+	   margin:0 5px;
+	 }
+	 
+	 #wrapper #search input {
+	   width:200px;
+	 }
+	 
+	 #wrapper #search span.note {
+	   font-size:10px;
+	   font-weight:normal;
+	 }
+	</style>
 </head>
 <body>
   <div id="wrapper">
-    <p><label for="search">Search</label><input type="text" name="search" value="" id="search"></p>
+    <h1>Add Clear jQuery Plugin</h1>
+    <p id="search">
+      <label for="search_input">Search</label>
+      <input type="text" name="search" value="" id="search_input">
+      <span class="note">When you type something in this box, the clear button will appear.</span>
+    </p>
+    <p><a href="http://github.com/skorecky/Add-Clear">Github Project Page</a> | <a href="http://twitter.com/skorecky">@skorecky</a></p>
   </div>
 </body>
 </html>
