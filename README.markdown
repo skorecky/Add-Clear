@@ -48,6 +48,4 @@ Add Clear is a jQuery plugin that adds a input clearing button on any input you 
 </table>
 
 #### Using Options
-    $(document).ready(function(){
-      $("input").addClear({closeImage : "/image/path/close.png",top : "-2px", right : "6px"});
-    });
+    $("input").addClear({closeImage : "/image/path/close.png",top : "-2px", right : "6px"});
