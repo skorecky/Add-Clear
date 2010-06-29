@@ -1,6 +1,6 @@
 // Author: Stephen Korecky
 // Website: http://stephenkorecky.com
-// Plugin Website: http://github.com/skorecky/addclear
+// Plugin Website: http://github.com/skorecky/Add-Clear
 
 (function($){  
 	$.fn.extend({   
