@@ -9,7 +9,7 @@ Add Clear is a jQuery plugin that adds a input clearing button on any input you 
 ## How to use
     
 - Load jQuery into your project
-- Load our plugin into your project
+- Load Add Clear plugin into your project
 - Setup which elements you would like to apply this plugin to.
 
 ### Usage
@@ -22,9 +22,11 @@ Add Clear is a jQuery plugin that adds a input clearing button on any input you 
   	
 ### Available Options
 
-* closeImage
+* closeImage _default clear.png_
+* top  _default 0px_
+* right _default 4px_
 
 #### Using Options
     $(document).ready(function(){
-      $("input").addClear({closeImage : "/image/path/close.png"});
+      $("input").addClear({closeImage : "/image/path/close.png",top : "-2px", right : "6px"});
     });

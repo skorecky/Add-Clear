@@ -6,7 +6,9 @@
 	$.fn.extend({   
 		addClear: function(options) {  
 			var options =  $.extend({  
-				closeImage: "clear.png"
+				closeImage: "clear.png",
+				top: "0",
+				right: "4px"
 				}, options);
 
 				$(this).wrap("<span style='position:relative;' class='add-clear-span'>");
@@ -17,9 +19,9 @@
 					'height' : '16px',
 					'overflow' : 'hidden',
 					'position' : 'absolute',
-					'right' : '4px',
+					'right' : options.right,
 					'text-indent' : '-9999px',
-					'top' : '0',
+					'top' : options.top,
 					'width' : '16px'
 					}, this);
 
