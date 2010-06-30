@@ -34,6 +34,8 @@
 					$(this).keyup(function() {
 						if($(this).val().length >= 1) {
 							$(this).siblings("a[href='#clear']").show();
+						} else {
+							$(this).siblings("a[href='#clear']").hide();
 						}
 					});
 
