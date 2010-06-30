@@ -8,7 +8,9 @@
 			var options =  $.extend({  
 				closeImage: "clear.png",
 				top: 0,
-				right: 4
+				right: 4,
+				returnFocus: true,
+				showOnLoad: false
 				}, options);
 
 				$(this).wrap("<span style='position:relative;' class='add-clear-span'>");
@@ -24,19 +26,23 @@
 					'top' : options.top+'px',
 					'width' : '16px'
 					}, this);
-
+					
+					if($(this).val().length >= 1 && options.showOnLoad === true) {
+						$(this).siblings("a[href='#clear']").show();
+					}
+					
 					$(this).keyup(function() {
 						if($(this).val().length >= 1) {
 							$(this).siblings("a[href='#clear']").show();
-						} else {
-							$(this).siblings("a[href='#clear']").hide();
 						}
 					});
 
 					$("a[href='#clear']").click(function(){
 						$(this).siblings("input").val("");
 						$(this).hide();
-						$(this).siblings("input").focus();
+						if(options.returnFocus === true){
+							$(this).siblings("input").focus();
+						}
 						return false;
 					});
 					return this; 

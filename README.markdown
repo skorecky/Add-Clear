@@ -45,6 +45,16 @@ Add Clear is a jQuery plugin that adds a input clearing button on any input you 
     <td>4</td>
     <td>number</td>
   </tr>
+  <tr>
+    <td>returnFocus</td>
+    <td>true</td>
+    <td>boolean</td>
+  </tr>
+  <tr>
+    <td>showOnLoad</td>
+    <td>false</td>
+    <td>boolean</td>
+  </tr>
 </table>
 
 #### Using Options
