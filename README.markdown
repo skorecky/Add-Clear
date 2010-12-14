@@ -1,10 +1,12 @@
 **Author:** Stephen Korecky <br />
 **Website:** http://stephenkorecky.com <br />
 **Plugin Website:** http://github.com/skorecky/Add-Clear <br />
+----
+**Contributers:** <a href="https://github.com/scoman81">scoman81</a> <br />
 
 ## About
 
-**Version 1.0**
+**Version 1.1**
 
 Add Clear is a jQuery plugin that adds a input clearing button on any input you apply it to. It clears the value, and returns focus to that field.
 
@@ -20,6 +22,13 @@ Add Clear is a jQuery plugin that adds a input clearing button on any input you 
   	  $(document).ready(function(){
   	    $("input").addClear();
   	  });
+  	  
+  	  // Example onClear option usage
+  	  $("input").addClear({
+        onClear: function(){
+          alert("call back!");
+        }
+      });
   	</script>
   	
 ### Available Options
@@ -54,6 +63,11 @@ Add Clear is a jQuery plugin that adds a input clearing button on any input you 
     <td>showOnLoad</td>
     <td>false</td>
     <td>boolean</td>
+  </tr>
+  <tr>
+    <td>onClear</td>
+    <td>null</td>
+    <td>function</td>
   </tr>
 </table>
 

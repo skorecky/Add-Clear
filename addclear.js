@@ -10,7 +10,8 @@
 				top: 0,
 				right: 4,
 				returnFocus: true,
-				showOnLoad: false
+				showOnLoad: false,
+				onClear: null
 				}, options);
 
 				$(this).wrap("<span style='position:relative;' class='add-clear-span'>");
@@ -45,6 +46,9 @@
 						if(options.returnFocus === true){
 							$(this).siblings("input").focus();
 						}
+						if (options.onClear){
+              options.onClear($(this).siblings("input"));
+            }
 						return false;
 					});
 					return this; 
