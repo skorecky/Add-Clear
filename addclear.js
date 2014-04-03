@@ -15,7 +15,7 @@
 				}, options);
 
 				$(this).wrap("<span style='position:relative;' class='add-clear-span'>");
-				$(".add-clear-span").append("<a href='#clear'>clear</a>");
+				$(this).after("<a href='#clear'>clear</a>");
 				$("a[href='#clear']").css({
 					'background' : 'transparent url('+options.closeImage+') 0 0 no-repeat', 
 					'display' : 'none',
