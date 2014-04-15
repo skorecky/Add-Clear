@@ -22,16 +22,16 @@ apply it to. It clears the value, and returns focus to that field.
 
 ### Usage
 ```javascript
-  	  $(function(){
-  	    $("input").addClear();
-  	  });
+$(function(){
+  $("input").addClear();
+});
 
-  	  // Example onClear option usage
-  	  $("input").addClear({
-        onClear: function(){
-          alert("call back!");
-        }
-      });
+// Example onClear option usage
+$("input").addClear({
+  onClear: function(){
+    alert("call back!");
+  }
+});
 ```
 ### Available Options
 
