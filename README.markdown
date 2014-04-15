@@ -22,8 +22,7 @@ apply it to. It clears the value, and returns focus to that field.
 
 ### Usage
 ```javascript
-    <script type="text/javascript" charset="utf-8">
-  	  $(document).ready(function(){
+  	  $(function(){
   	    $("input").addClear();
   	  });
 
@@ -33,7 +32,6 @@ apply it to. It clears the value, and returns focus to that field.
           alert("call back!");
         }
       });
-  	</script>
 ```
 ### Available Options
 
