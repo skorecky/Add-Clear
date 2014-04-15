@@ -1,7 +1,8 @@
 **Author:** Stephen Korecky <br />
 **Website:** http://stephenkorecky.com <br />
 **Plugin Website:** http://github.com/skorecky/Add-Clear <br />
-**Contributers:** <a href="https://github.com/scoman81">scoman81</a> <a href="https://github.com/Steve887">Steve887</a>
+**Contributers:** <a href="https://github.com/scoman81">scoman81</a> <a href="https://github.com/Steve887">Steve887</a> <br />
+**jQuery Plugin:** http://plugins.jquery.com/add-clear/
 
 ## About
 
