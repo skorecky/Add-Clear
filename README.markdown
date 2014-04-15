@@ -5,23 +5,28 @@
 
 ## About
 
-**Version 1.1**
+**Version 2.0.0b**
 
-Add Clear is a jQuery plugin that adds a input clearing button on any input you apply it to. It clears the value, and returns focus to that field.
+Add Clear is a jQuery plugin that adds a input clearing button on any input you
+apply it to. It clears the value, and returns focus to that field.
+
+### New in 2.0.0
+- Code Cleanup
+- Removed the clear image since most devices are going beyond 72PPI
 
 ## How to use
-    
+
 - Load jQuery into your project
 - Load Add Clear plugin into your project
 - Setup which elements you would like to apply this plugin to.
 
 ### Usage
-
+```javascript
     <script type="text/javascript" charset="utf-8">
   	  $(document).ready(function(){
   	    $("input").addClear();
   	  });
-  	  
+
   	  // Example onClear option usage
   	  $("input").addClear({
         onClear: function(){
@@ -29,7 +34,7 @@ Add Clear is a jQuery plugin that adds a input clearing button on any input you 
         }
       });
   	</script>
-  	
+```
 ### Available Options
 
 <table>
@@ -39,13 +44,13 @@ Add Clear is a jQuery plugin that adds a input clearing button on any input you 
     <th>Type</th>
   </tr>
   <tr>
-    <td>closeImage</td>
-    <td>clear.png</td>
+    <td>closeSymbol</td>
+    <td>&#10006;</td>
     <td>string</td>
   </tr>
   <tr>
     <td>top</td>
-    <td>0</td>
+    <td>1</td>
     <td>number</td>
   </tr>
   <tr>
@@ -71,4 +76,6 @@ Add Clear is a jQuery plugin that adds a input clearing button on any input you 
 </table>
 
 #### Using Options
-    $("input").addClear({closeImage : "/image/path/close.png",top : -2, right : 6});
+```javascript
+$("input").addClear({top : -2, right : 6});
+```
