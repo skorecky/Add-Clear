@@ -25,7 +25,7 @@
         overflow: 'hidden',
         position: 'absolute',
         right: options.right,
-        top: options.top,
+        top: options.top
       }, this);
 
       if($(this).val().length >= 1 && options.showOnLoad === true) {
