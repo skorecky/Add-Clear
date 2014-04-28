@@ -42,9 +42,11 @@
       });
 
       $(this).blur(function() {
+          var self = this;
+
           if (options.hideOnBlur) {
               setTimeout(function () {
-                $(this).siblings("a[href='#clear']").hide();
+                $(self).siblings("a[href='#clear']").hide();
               }, 50);
           }
       });
