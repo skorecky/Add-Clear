@@ -43,7 +43,9 @@
 
       $(this).blur(function() {
           if (options.hideOnBlur) {
-            $(this).siblings("a[href='#clear']").hide();
+              setTimeout(function () {
+                $(this).siblings("a[href='#clear']").hide();
+              }, 50);
           }
       });
 
