@@ -68,6 +68,11 @@ $("input").addClear({
     <td>boolean</td>
   </tr>
   <tr>
+    <td>hideOnBlur</td>
+    <td>function</td>
+    <td>boolean</td>
+  </tr>
+  <tr>
     <td>onClear</td>
     <td>null</td>
     <td>function</td>

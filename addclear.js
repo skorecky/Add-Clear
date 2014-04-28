@@ -14,7 +14,8 @@
         right: 4,
         returnFocus: true,
         showOnLoad: false,
-        onClear: null
+        onClear: null,
+        hideOnBlur: false
       }, options);
 
       $(this).wrap("<span style='position:relative;' class='add-clear-span'>");
@@ -38,6 +39,12 @@
         if($(this).val().length >= 1) {
           $(this).siblings("a[href='#clear']").show();
         }
+      });
+
+      $(this).blur(function() {
+          if (options.hideOnBlur) {
+            $(this).siblings("a[href='#clear']").hide();
+          }
       });
 
       $(this).keyup(function() {
