@@ -34,6 +34,12 @@
         $(this).siblings("a[href='#clear']").show();
       }
 
+      $(this).focus(function() {
+        if($(this).val().length >= 1) {
+          $(this).siblings("a[href='#clear']").show();
+        }
+      });
+
       $(this).keyup(function() {
         if($(this).val().length >= 1) {
           $(this).siblings("a[href='#clear']").show();
