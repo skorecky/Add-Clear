@@ -5,6 +5,8 @@
 (function($){
   $.fn.extend({
     addClear: function(options) {
+      var selector = this.selector;
+
       var options =  $.extend({
         closeSymbol: "&#10006;",
         color: "#CCC",
@@ -41,10 +43,10 @@
       });
 
       $("a[href='#clear']").click(function(){
-        $(this).siblings("input").val("");
+        $(this).siblings(selector).val("");
         $(this).hide();
         if(options.returnFocus === true){
-          $(this).siblings("input").focus();
+          $(this).siblings(selector).focus();
         }
         if (options.onClear){
           options.onClear($(this).siblings("input"));
