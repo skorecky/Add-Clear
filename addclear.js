@@ -5,6 +5,8 @@
 (function($){
   $.fn.extend({
     addClear: function(options) {
+      var selector = this.selector;
+
       var options =  $.extend({
         closeSymbol: "&#10006;",
         color: "#CCC",
@@ -12,7 +14,8 @@
         right: 4,
         returnFocus: true,
         showOnLoad: false,
-        onClear: null
+        onClear: null,
+        hideOnBlur: false
       }, options);
 
       $(this).wrap("<span style='position:relative;' class='add-clear-span'>");
@@ -32,6 +35,22 @@
         $(this).siblings("a[href='#clear']").show();
       }
 
+      $(this).focus(function() {
+        if($(this).val().length >= 1) {
+          $(this).siblings("a[href='#clear']").show();
+        }
+      });
+
+      $(this).blur(function() {
+          var self = this;
+
+          if (options.hideOnBlur) {
+              setTimeout(function () {
+                $(self).siblings("a[href='#clear']").hide();
+              }, 50);
+          }
+      });
+
       $(this).keyup(function() {
         if($(this).val().length >= 1) {
           $(this).siblings("a[href='#clear']").show();
@@ -41,10 +60,10 @@
       });
 
       $("a[href='#clear']").click(function(){
-        $(this).siblings("input").val("");
+        $(this).siblings(selector).val("");
         $(this).hide();
         if(options.returnFocus === true){
-          $(this).siblings("input").focus();
+          $(this).siblings(selector).focus();
         }
         if (options.onClear){
           options.onClear($(this).siblings("input"));
