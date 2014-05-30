@@ -47,6 +47,11 @@ $("input").addClear({
     <th>Type</th>
   </tr>
   <tr>
+    <td>id</td>
+    <td>clear</td>
+    <td>string</td>
+  </tr>
+  <tr>
     <td>closeSymbol</td>
     <td>&#10006;</td>
     <td>string</td>
