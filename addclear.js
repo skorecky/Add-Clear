@@ -8,6 +8,7 @@
       var selector = this.selector;
 
       var options =  $.extend({
+		id: "clear",
         closeSymbol: "&#10006;",
         color: "#CCC",
         top: 1,
@@ -19,8 +20,8 @@
       }, options);
 
       $(this).wrap("<span style='position:relative;' class='add-clear-span'>");
-      $(this).after("<a href='#clear'>"+options.closeSymbol+"</a>");
-      $("a[href='#clear']").css({
+      $(this).after("<a href='#clear' id='" + options.id + "'>"+options.closeSymbol+"</a>");
+      $("a#" + options.id).css({
         color: options.color,
         'text-decoration': 'none',
         display: 'none',
@@ -32,12 +33,12 @@
       }, this);
 
       if($(this).val().length >= 1 && options.showOnLoad === true) {
-        $(this).siblings("a[href='#clear']").show();
+        $(this).siblings("a#" + options.id).show();
       }
 
       $(this).focus(function() {
         if($(this).val().length >= 1) {
-          $(this).siblings("a[href='#clear']").show();
+          $(this).siblings("a#" + options.id).show();
         }
       });
 
@@ -46,20 +47,20 @@
 
           if (options.hideOnBlur) {
               setTimeout(function () {
-                $(self).siblings("a[href='#clear']").hide();
+                $(self).siblings("a#" + options.id).hide();
               }, 50);
           }
       });
 
       $(this).keyup(function() {
         if($(this).val().length >= 1) {
-          $(this).siblings("a[href='#clear']").show();
+          $(this).siblings("a#" + options.id).show();
         } else {
-          $(this).siblings("a[href='#clear']").hide();
+          $(this).siblings("a#" + options.id).hide();
         }
       });
 
-      $("a[href='#clear']").click(function(){
+      $("a#" + options.id).click(function(){
         $(this).siblings(selector).val("");
         $(this).hide();
         if(options.returnFocus === true){
