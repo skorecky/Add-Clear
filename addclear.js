@@ -18,7 +18,7 @@
         hideOnBlur: false
       }, options);
 
-      $(this).wrap("<span style='position:relative;' class='add-clear-span'>");
+      $(this).wrap("<span style='position:relative;' class='add-clear-span'></span>");
       $(this).after("<a href='#clear'>"+options.closeSymbol+"</a>");
       $("a[href='#clear']").css({
         color: options.color,
