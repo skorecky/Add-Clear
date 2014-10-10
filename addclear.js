@@ -1,5 +1,4 @@
 // Author: Stephen Korecky
-// Modifications: @jameswragg
 // Website: http://stephenkorecky.com
 // Plugin Website: http://github.com/skorecky/Add-Clear
 
@@ -34,11 +33,11 @@
 
 		init: function() {
 			var $this = $(this.element),
-				me = this,
-				options = this.options;
+					me = this,
+					options = this.options;
 
-			$this.wrap("<span style='position:relative;' class='add-clear-span'>");
-			$this.after($("<a href='#clear' style='display: none;'>" + options.closeSymbol + "</a>"))
+			$this.wrap("<span style='position:relative;' class='add-clear-span'></span>");
+			$this.after($("<a href='#clear' style='display: none;'>" + options.closeSymbol + "</a>"));
 			$this.next().css({
 				color: options.color,
 				'text-decoration': 'none',
