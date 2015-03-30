@@ -14,7 +14,8 @@
 			returnFocus: true,
 			showOnLoad: false,
 			onClear: null,
-			hideOnBlur: false
+			hideOnBlur: false,
+			clearOnEscape: true,
 		};
 
 	// The actual plugin constructor
@@ -69,7 +70,10 @@
 				}
 			});
 
-			$this.keyup(function() {
+			$this.keyup(function(e) {
+				if (options.clearOnEscape === true && e.keyCode == 27) {
+					$(this).val('').focus();
+				}
 				if ($(this).val().length >= 1) {
 					$(this).siblings("a[href='#clear']").show();
 				} else {
