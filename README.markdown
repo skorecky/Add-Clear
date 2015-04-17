@@ -1,23 +1,14 @@
 **Author:** Stephen Korecky <br />
 **Website:** http://stephenkorecky.com <br />
 **Plugin Website:** http://github.com/skorecky/Add-Clear <br />
-**Contributers:**
-<a href="https://github.com/scoman81">scoman81</a>,
-<a href="https://github.com/Steve887">Steve887</a>,
-<a href="https://github.com/Deividy">Deividy</a>
-<br />
 **jQuery Plugin:** http://plugins.jquery.com/add-clear/
 
 ## About
 
-**Version 2.0.1**
+**Version 2.0.2**
 
 Add Clear is a jQuery plugin that adds a input clearing button on any input you
 apply it to. It clears the value, and returns focus to that field.
-
-### New in 2.0.0
-- Code Cleanup
-- Removed the clear image since most devices are going beyond 72PPI
 
 ## How to use
 
@@ -82,8 +73,3 @@ $("input").addClear({
     <td>function</td>
   </tr>
 </table>
-
-#### Using Options
-```javascript
-$("input").addClear({top : -2, right : 6});
-```
