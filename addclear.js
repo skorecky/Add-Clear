@@ -61,13 +61,16 @@
 				}
 			});
 
-			$this.blur(function() {
+			$this.blur(function(e) {
 				var self = this;
 
 				if (options.hideOnBlur) {
 					setTimeout(function() {
-						$(self).siblings("a[href='#clear']").hide();
-					}, 50);
+						var relatedTarget = e.relatedTarget || e.explicitOriginalTarget || document.activeElement;
+						if (relatedTarget !== $clearButton[0]) {
+							$(self).siblings("a[href='#clear']").hide();
+						}
+					}, 0);
 				}
 			});
 
@@ -78,6 +81,12 @@
 					$(this).siblings("a[href='#clear']").hide();
 				}
 			});
+
+			if (options.hideOnBlur) {
+				$clearButton.blur(function () {
+					$clearButton.css({display: 'none'});
+				});
+			}
 
 			$clearButton.click(function(e) {
 				$(this).siblings(me.element).val("");
