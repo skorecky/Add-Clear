@@ -52,23 +52,21 @@
 			}, this);
 
 			if ($this.val().length >= 1 && options.showOnLoad === true) {
-				$this.siblings("a[href='#clear']").show();
+				$clearButton.css({display: 'block'});
 			}
 
 			$this.focus(function() {
 				if ($(this).val().length >= 1) {
-					$(this).siblings("a[href='#clear']").show();
+					$clearButton.css({display: 'block'});
 				}
 			});
 
 			$this.blur(function(e) {
-				var self = this;
-
 				if (options.hideOnBlur) {
 					setTimeout(function() {
 						var relatedTarget = e.relatedTarget || e.explicitOriginalTarget || document.activeElement;
 						if (relatedTarget !== $clearButton[0]) {
-							$(self).siblings("a[href='#clear']").hide();
+							$clearButton.css({display: 'none'});
 						}
 					}, 0);
 				}
@@ -76,9 +74,9 @@
 
 			$this.keyup(function() {
 				if ($(this).val().length >= 1) {
-					$(this).siblings("a[href='#clear']").show();
+					$clearButton.css({display: 'block'});
 				} else {
-					$(this).siblings("a[href='#clear']").hide();
+					$clearButton.css({display: 'none'});
 				}
 			});
 
@@ -89,13 +87,14 @@
 			}
 
 			$clearButton.click(function(e) {
-				$(this).siblings(me.element).val("");
-				$(this).hide();
+				var $input = $(me.element);
+				$input.val("");
+				$(this).css({display: 'none'});
 				if (options.returnFocus === true) {
-					$(this).siblings(me.element).focus();
+					$input.focus();
 				}
 				if (options.onClear) {
-					options.onClear($(this).siblings("input"));
+					options.onClear($input);
 				}
 				e.preventDefault();
 			});
