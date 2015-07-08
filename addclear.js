@@ -33,11 +33,13 @@
 
 		init: function() {
 			var $this = $(this.element),
+					$clearButton,
 					me = this,
 					options = this.options;
 
 			$this.wrap("<span style='position:relative;' class='add-clear-span'></span>");
-			$this.after($("<a href='#clear' style='display: none;'>" + options.closeSymbol + "</a>"));
+			$clearButton = $("<a href='#clear' style='display: none;'>" + options.closeSymbol + "</a>"));
+			$this.after($clearButton);
 			$this.next().css({
 				color: options.color,
 				'text-decoration': 'none',
@@ -77,7 +79,7 @@
 				}
 			});
 
-			$("a[href='#clear']").click(function(e) {
+			$clearButton.click(function(e) {
 				$(this).siblings(me.element).val("");
 				$(this).hide();
 				if (options.returnFocus === true) {
