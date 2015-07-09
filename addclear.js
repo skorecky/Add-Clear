@@ -1,6 +1,31 @@
-// Author: Stephen Korecky
-// Website: http://stephenkorecky.com
-// Plugin Website: http://github.com/skorecky/Add-Clear
+/*!
+ Author: Stephen Korecky
+ Website: http://stephenkorecky.com
+ Plugin Website: http://github.com/skorecky/Add-Clear
+ Modified version (website: https://github.com/kyusu/Add-Clear)
+
+ The MIT License (MIT)
+
+ Copyright (c) 2015 Stephen Korecky
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all
+ copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+*/
 
 ;(function($, window, document, undefined) {
 
@@ -33,11 +58,13 @@
 
 		init: function() {
 			var $this = $(this.element),
+					$clearButton,
 					me = this,
 					options = this.options;
 
 			$this.wrap("<span style='position:relative;' class='add-clear-span'></span>");
-			$this.after($("<a href='#clear' style='display: none;'>" + options.closeSymbol + "</a>"));
+			$clearButton = $("<a href='#clear' style='display: none;'>" + options.closeSymbol + "</a>");
+			$this.after($clearButton);
 			$this.next().css({
 				color: options.color,
 				'text-decoration': 'none',
@@ -50,41 +77,49 @@
 			}, this);
 
 			if ($this.val().length >= 1 && options.showOnLoad === true) {
-				$this.siblings("a[href='#clear']").show();
+				$clearButton.css({display: 'block'});
 			}
 
 			$this.focus(function() {
 				if ($(this).val().length >= 1) {
-					$(this).siblings("a[href='#clear']").show();
+					$clearButton.css({display: 'block'});
 				}
 			});
 
-			$this.blur(function() {
-				var self = this;
-
+			$this.blur(function(e) {
 				if (options.hideOnBlur) {
 					setTimeout(function() {
-						$(self).siblings("a[href='#clear']").hide();
-					}, 50);
+						var relatedTarget = e.relatedTarget || e.explicitOriginalTarget || document.activeElement;
+						if (relatedTarget !== $clearButton[0]) {
+							$clearButton.css({display: 'none'});
+						}
+					}, 0);
 				}
 			});
 
 			$this.keyup(function() {
 				if ($(this).val().length >= 1) {
-					$(this).siblings("a[href='#clear']").show();
+					$clearButton.css({display: 'block'});
 				} else {
-					$(this).siblings("a[href='#clear']").hide();
+					$clearButton.css({display: 'none'});
 				}
 			});
 
-			$("a[href='#clear']").click(function(e) {
-				$(this).siblings(me.element).val("");
-				$(this).hide();
+			if (options.hideOnBlur) {
+				$clearButton.blur(function () {
+					$clearButton.css({display: 'none'});
+				});
+			}
+
+			$clearButton.click(function(e) {
+				var $input = $(me.element);
+				$input.val("");
+				$(this).css({display: 'none'});
 				if (options.returnFocus === true) {
-					$(this).siblings(me.element).focus();
+					$input.focus();
 				}
 				if (options.onClear) {
-					options.onClear($(this).siblings("input"));
+					options.onClear($input);
 				}
 				e.preventDefault();
 			});
