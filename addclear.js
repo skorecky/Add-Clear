@@ -39,7 +39,8 @@
 			returnFocus: true,
 			showOnLoad: false,
 			onClear: null,
-			hideOnBlur: false
+			hideOnBlur: false,
+			tabbable: true
 		};
 
 	// The actual plugin constructor
@@ -63,7 +64,8 @@
 					options = this.options;
 
 			$this.wrap("<span style='position:relative;' class='add-clear-span'></span>");
-			$clearButton = $("<a href='#clear' style='display: none;'>" + options.closeSymbol + "</a>");
+			var tabIndex = options.tabbable ? "" : " tabindex='-1'";
+			$clearButton = $("<a href='#clear' style='display: none;'" + tabIndex + ">" + options.closeSymbol + "</a>");
 			$this.after($clearButton);
 			$this.next().css({
 				color: options.color,
