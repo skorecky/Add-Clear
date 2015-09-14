@@ -1,6 +1,8 @@
-**Author:** Stephen Korecky <br />
-**Website:** http://stephenkorecky.com <br />
-**Plugin Website:** http://github.com/skorecky/Add-Clear <br />
+**Author:** Stephen Korecky <br>
+**Website:** http://stephenkorecky.com <br>
+**Plugin Website:** https://github.com/skorecky/Add-Clear <br>
+**NPM jQuery Plugin:** https://www.npmjs.com/package/add-clear <br>
+_jQuery Plugin website is outdated and read-only now. Please use NPM_<br>
 **jQuery Plugin:** http://plugins.jquery.com/add-clear/
 
 ## About
