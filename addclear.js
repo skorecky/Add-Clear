@@ -111,6 +111,7 @@
 			    $this.off('keyup', handleUserInput);
 				$this.off('cut', handleUserInput);
 				handleInput = handleUserInput;
+				handleUserInput.call(this);
 			};
 
 			$this.on('keyup', handleUserInput);
