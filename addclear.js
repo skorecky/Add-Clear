@@ -99,12 +99,31 @@
 				}
 			});
 
-			$this.keyup(function() {
+			var handleUserInput = function() {
 				if ($(this).val().length >= 1) {
 					$clearButton.css({display: 'block'});
 				} else {
 					$clearButton.css({display: 'none'});
 				}
+			};
+
+			var handleInput = function () {
+			    $this.off('keyup', handleUserInput);
+				$this.off('cut', handleUserInput);
+				handleInput = handleUserInput;
+			};
+
+			$this.on('keyup', handleUserInput);
+
+			$this.on('cut', function () {
+				var self = this;
+				setTimeout(function () {
+					handleUserInput.call(self);
+				}, 0);
+			});
+
+			$this.on('input', function () {
+				handleInput.call(this);
 			});
 
 			if (options.hideOnBlur) {
