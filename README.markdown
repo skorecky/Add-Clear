@@ -79,4 +79,17 @@ $("input").addClear({
     <td>null</td>
     <td>function</td>
   </tr>
+  <tr>
+    <td>paddingRight</td>
+    <td>20px</td>
+    <td>string</td>
+  </tr>
 </table>
+
+### Note about Microsoft Browsers
+
+The more modern Microsoft browsers (IE10+ and Edge) have built-in clear buttons that appear
+automatically on text inputs. To prevent those buttons from interfering with Add Clear, you must
+use the `::-ms-clear` CSS pseudo-element in your styles, as described here:
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/::-ms-clear
