@@ -40,7 +40,8 @@
 			showOnLoad: false,
 			onClear: null,
 			hideOnBlur: false,
-			tabbable: true
+			tabbable: true,
+			paddingRight: '20px'
 		};
 
 	// The actual plugin constructor
@@ -77,6 +78,12 @@
 				right: options.right,
 				top: options.top
 			}, this);
+
+			if (options.paddingRight) {
+				$this.css({
+					'padding-right': options.paddingRight
+				});
+			}
 
 			if ($this.val().length >= 1 && options.showOnLoad === true) {
 				$clearButton.css({display: 'block'});
