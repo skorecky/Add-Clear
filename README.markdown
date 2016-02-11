@@ -7,8 +7,6 @@ _jQuery Plugin website is outdated and read-only now. Please use NPM_<br>
 
 ## About
 
-**Version 2.0**
-
 Add Clear is a jQuery plugin that adds a input clearing button on any input you
 apply it to. It clears the value, and returns focus to that field.
 

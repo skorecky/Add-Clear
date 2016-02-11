@@ -2,7 +2,7 @@
  Author: Stephen Korecky
  Website: http://stephenkorecky.com
  Plugin Website: http://github.com/skorecky/Add-Clear
- Version: 2.0.5
+ Version: 2.0.6
 
  The MIT License (MIT)
 
