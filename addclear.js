@@ -41,7 +41,9 @@
 			onClear: null,
 			hideOnBlur: false,
 			tabbable: true,
-			paddingRight: '20px'
+			paddingRight: '20px',
+			lineHeight: 1,
+			display: "block"
 		};
 
 	// The actual plugin constructor
@@ -64,7 +66,7 @@
 					me = this,
 					options = this.options;
 
-			$this.wrap("<span style='position:relative;' class='add-clear-span'></span>");
+			$this.wrap("<span class='add-clear-span'></span>");
 			var tabIndex = options.tabbable ? "" : " tabindex='-1'";
 			$clearButton = $("<a href='#clear' style='display: none;'" + tabIndex + ">" + options.closeSymbol + "</a>");
 			$this.after($clearButton);
@@ -72,7 +74,6 @@
 				color: options.color,
 				'text-decoration': 'none',
 				display: 'none',
-				'line-height': 1,
 				overflow: 'hidden',
 				position: 'absolute',
 				right: options.right,
@@ -86,12 +87,12 @@
 			}
 
 			if ($this.val().length >= 1 && options.showOnLoad === true) {
-				$clearButton.css({display: 'block'});
+				$clearButton.css({display: display});
 			}
 
 			$this.focus(function() {
 				if ($(this).val().length >= 1) {
-					$clearButton.css({display: 'block'});
+					$clearButton.css({display: display});
 				}
 			});
 
@@ -108,7 +109,7 @@
 
 			var handleUserInput = function() {
 				if ($(this).val().length >= 1) {
-					$clearButton.css({display: 'block'});
+					$clearButton.css({display: display});
 				} else {
 					$clearButton.css({display: 'none'});
 				}
