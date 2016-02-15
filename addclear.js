@@ -42,7 +42,7 @@
 			hideOnBlur: false,
 			tabbable: true,
 			paddingRight: '20px',
-			lineHeight: 1,
+			lineHeight: '1',
 			display: "block"
 		};
 
