@@ -87,12 +87,12 @@
 			}
 
 			if ($this.val().length >= 1 && options.showOnLoad === true) {
-				$clearButton.css({display: display});
+				$clearButton.css({display: options.display});
 			}
 
 			$this.focus(function() {
 				if ($(this).val().length >= 1) {
-					$clearButton.css({display: display});
+					$clearButton.css({display: options.display});
 				}
 			});
 
@@ -109,7 +109,7 @@
 
 			var handleUserInput = function() {
 				if ($(this).val().length >= 1) {
-					$clearButton.css({display: display});
+					$clearButton.css({display: options.display});
 				} else {
 					$clearButton.css({display: 'none'});
 				}
