@@ -66,7 +66,7 @@
 					me = this,
 					options = this.options;
 
-			$this.wrap("<span class='add-clear-span'></span>");
+			$this.wrap("<div style='display:inline; position:relative;' class='add-clear-span'></div>");
 			var tabIndex = options.tabbable ? "" : " tabindex='-1'";
 			$clearButton = $("<a href='#clear' style='display: none;'" + tabIndex + ">" + options.closeSymbol + "</a>");
 			$this.after($clearButton);
@@ -77,7 +77,8 @@
 				overflow: 'hidden',
 				position: 'absolute',
 				right: options.right,
-				top: options.top
+				top: options.top,
+				lineHeight: options.lineHeight
 			}, this);
 
 			if (options.paddingRight) {
