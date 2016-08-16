@@ -82,16 +82,16 @@ $("input").addClear({
     <td>20px</td>
     <td>string</td>
   </tr>
-    <tr>
-      <td>LineHeight</td>
-      <td>1</td>
-      <td>string</td>
-    </tr>
-      <tr>
-        <td>display</td>
-        <td>block</td>
-        <td>string</td>
-      </tr>
+  <tr>
+    <td>LineHeight</td>
+    <td>1</td>
+    <td>string</td>
+  </tr>
+  <tr>
+    <td>display</td>
+    <td>block</td>
+    <td>string</td>
+  </tr>
 </table>
 
 ### Note about Microsoft Browsers

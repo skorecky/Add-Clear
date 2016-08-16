@@ -72,7 +72,7 @@
 			$this.after($clearButton);
 			$this.next().css({
 				color: options.color,
-				'text-decoration': 'none',
+				textDecoration: 'none',
 				display: 'none',
 				overflow: 'hidden',
 				position: 'absolute',
